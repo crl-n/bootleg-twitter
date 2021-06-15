@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/register.css}"/>
+</head>
+<body>
+
+    <div class="container">
+            <form th:action="@{/register}" method="post">
+                <ul>
+                    <li>
+                        <label>Username:</label>
+                        <input th:name="username" type="text"/>
+                    </li>
+                    <li>
+                        <label>First name:</label>
+                        <input th:name="firstname" type="text"/>
+                    </li>
+                    <li>
+                        <label>Last name:</label>
+                        <input th:name="lastname" type="text"/>
+                    </li>
+                    <li>
+                        <label>Profile page name:</label>
+                        <input th:name="pagename" type="text"/>
+                    </li>
+                    <li>
+                        <label>Password:</label>
+                        <input th:name="password" type="password"/>
+                    </li>
+                    <li>
+                        <label>Re-enter password:</label>
+                        <input th:name="rpassword" type="password"/>
+                    </li>
+                    <li>
+                        <input id="register" type="submit" value="Register"/>
+                    </li>
+                </ul>
+            </form>
+        <a th:href="@{/}" style="font-size: 11px;">Back to home page</a>
+    </div>
+</body>
+</html>

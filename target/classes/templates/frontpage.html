@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Front Page</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+    </head>
+    <body>
+
+        <!-- SIDEBAR STARTS -->
+
+        <div class="sidebar">
+            <div class="logo-item">
+                <i class="bi bi-twitter logo"></i>
+            </div>
+            <div class="sidebar-item" onclick="window.location.href = '/frontpage';">
+                <i class="bi-house icon"></i>
+                <h2>Home</h2>
+            </div>
+            <div class="sidebar-item" onclick="window.location.href = '/profile';">
+                <i class="bi-person-circle icon"></i>
+                <h2>My Profile</h2>
+            </div>
+            <div class="sidebar-item" onclick="alert('Work in progress');">
+                <i class="bi-gear-wide icon"></i>
+                <h2>Settings</h2>
+            </div>
+            <div class="sidebar-item" onclick="window.location.href = '/logout';">
+                <i class="bi bi-box-arrow-right icon"></i>
+                <h2>Log Out</h2>
+            </div>
+        </div>
+
+        <!-- SIDEBAR ENDS -->
+
+        <!-- FEED STARTS -->
+
+        <div class="feed">
+            <div class="feed-header">
+                <h2>Home</h2>
+            </div>
+
+            <!-- TWEETBOX STARTS -->
+
+            <div class="tweetbox">
+                <form class="tweetbox-form">
+                    <div class="tweetbox-input">
+                        <img src="https://www.avainmedia.org/wp-content/plugins/give/assets/dist/images/anonymous-user.svg" alt="Profile Picture">
+                        <input type="text" placeholder="What's on your mind?">
+                    </div>
+                    <button class="send-tweet-button">Tweet</button>
+                </form>
+            </div>
+
+            <!-- TWEETBOX ENDS -->
+
+            <!-- POST STARTS -->
+
+            <div class="post">
+                <div class="post-avatar">
+                    <img src="https://www.avainmedia.org/wp-content/plugins/give/assets/dist/images/anonymous-user.svg" alt="Profile Picture">
+                </div>
+                <div class="post-body">
+                    <div class="post-header">
+                        <div class="post-header-text">
+                            <h3>
+                                Carl Nysten
+                                <span class="post-header-special">@cany</span>
+                            </h3>
+                        </div>
+                        <div class="post-header-description">
+                            <p class="">Lorem ipsum dolor sit amet, consectetur adepisicing elit.</p>
+                        </div>
+                    </div>
+                    <img src="https://www.meganstarr.com/wp-content/uploads/2021/03/Things-to-do-on-the-Amalfi-Coast.jpg" alt="">
+                    <div class="post-footer">
+                        <span><i class="bi bi-chat"></i></span>
+                        <span><i class="bi bi-heart"></i></span>
+                        <span><i class="bi bi-arrow-repeat"></i></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- POST ENDS -->
+            <div class="post">
+                <div class="post-avatar">
+                    <img src="https://www.avainmedia.org/wp-content/plugins/give/assets/dist/images/anonymous-user.svg" alt="Profile Picture">
+                </div>
+                <div class="post-body">
+                    <div class="post-header">
+                        <div class="post-header-text">
+                            <h3>
+                                Carl Nysten
+                                <span class="post-header-special">@cany</span>
+                            </h3>
+                        </div>
+                        <div class="post-header-description">
+                            <p class="">Lorem ipsum dolor sit amet, consectetur adepisicing elit.</p>
+                        </div>
+                    </div>
+                    <img src="https://www.meganstarr.com/wp-content/uploads/2021/03/Things-to-do-on-the-Amalfi-Coast.jpg" alt="">
+                    <div class="post-footer">
+                        <span><i class="bi bi-chat"></i></span>
+                        <span><i class="bi bi-heart"></i></span>
+                        <span><i class="bi bi-arrow-repeat"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="post">
+                <div class="post-avatar">
+                    <img src="https://www.avainmedia.org/wp-content/plugins/give/assets/dist/images/anonymous-user.svg" alt="Profile Picture">
+                </div>
+                <div class="post-body">
+                    <div class="post-header">
+                        <div class="post-header-text">
+                            <h3>
+                                Carl Nysten
+                                <span class="post-header-special">@cany</span>
+                            </h3>
+                        </div>
+                        <div class="post-header-description">
+                            <p class="">Lorem ipsum dolor sit amet, consectetur adepisicing elit.</p>
+                        </div>
+                    </div>
+                    <img src="https://www.meganstarr.com/wp-content/uploads/2021/03/Things-to-do-on-the-Amalfi-Coast.jpg" alt="">
+                    <div class="post-footer">
+                        <span><i class="bi bi-chat"></i></span>
+                        <span><i class="bi bi-heart"></i></span>
+                        <span><i class="bi bi-arrow-repeat"></i></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- FEED ENDS -->
+
+        <!-- SEARCHBAR STARTS -->
+
+        <div class="searchbar">
+            <div class="search-input">
+                <div onclick="findUserClick()"><i class="bi bi-search search-icon"></i></div>
+                <input type="text" id="search-input" placeholder="Search for user" onkeyup="findUserKeyUp();">
+            </div>
+        </div>
+
+        <!-- SEARCHBAR ENDS -->
+
+        <!--
+        <div th:replace="fragments/searchbar"></div>
+
+        <div class="main">
+
+                <a th:href="@{login}">Login</a>
+                <a th:href="@{register}">Register</a>
+
+        </div>
+
+
+
+
+
+        -->
+        <script th:replace="fragments/script"></script>
+    </body>
+</html>
