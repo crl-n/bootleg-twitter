@@ -78,7 +78,7 @@ body {
     position: sticky;
     top: 0;
     background-color: white;
-    z-index: 100;
+    /*z-index: 100;*/
     border-bottom: 1px solid #e6ecf0;
     padding: 15px 20px;
 }
@@ -158,8 +158,6 @@ body {
 .post {
     display: flex;
     align-items: flex-start;
-    border-bottom: 1px solid var(--background-white);
-    padding-bottom: 10px;
 }
 
 .post-body img {
@@ -171,7 +169,7 @@ body {
 .post-footer {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 20px;
     width: 450px;
 }
 
@@ -209,6 +207,106 @@ body {
     padding: 20px;
 }
 
+/* COMMENTS */
+
+.comments {
+    display: flex;
+    align-items: flex;
+    flex-direction: column;
+    visibility: visible;
+    height: auto;
+    /*
+    visibility: collapse;
+    height: 0;
+    */
+    border-top: 4px solid var(--background-white);
+}
+
+.comment {
+    padding: 10px 0px 10px 80px;
+    border-bottom: 1px solid var(--background-white);
+    display: flex;
+    align-items: flex-start;
+}
+
+.post-comment-container {
+    border-bottom: 8px solid var(--background-white);
+}
+
+.send-comment {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--twitter-blue);
+    border: none;
+    color: white;
+    font-size: 13px;
+    font-weight: 550;
+    border-radius: 30px;
+    width: 120px;
+    height: 40px;
+}
+
+.send-comment:hover {
+    background-color: var(--twitter-blue-hover);
+}
+
+.comment-author {
+    font-weight: 600 !important;
+}
+
+.comment-avatar img {
+    height: 30px;
+    border-radius: 50%;
+}
+
+.comment-avatar {
+    padding: 20px;
+}
+
+.comment-header {
+    font-weight: 500;
+    font-size: 12px;
+    color: gray;
+    padding-bottom: 5px;
+}
+
+.comment-body {
+    flex: 1;
+    padding: 20px;
+}
+
+.commentbox-body {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    border-bottom: 1px solid var(--background-white);
+}
+
+.commentbox-body textarea {
+    flex: 1;
+    font-family: sans-serif;
+    margin-left: 20px;
+    margin-right: 10px;
+    font-size: 11px;
+    border: none;
+    border-radius: 20px;
+    height: 80px;
+    outline: none;
+    background-color: var(--background-white);
+    text-align: start;
+    padding: 15px;
+    resize: none;
+}
+
+.send-comment-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 40px;
+}
+
 /* SEARCH */
 
 .searchbar {
@@ -242,6 +340,105 @@ body {
     color: var(--twitter-blue-hover);
 }
 
+/* ALBUM */
 
+.album {
+    text-align: center;
+    padding: 20px;
+}
 
+.album h3 {
+    padding: 20px;
+}
 
+.pictureRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+.pictureRow img {
+    width: 40%;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.overlay {
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0,5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 5vh;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay-content p {
+    font-weight: 600;
+    font-size: 30px;
+    margin-top: 20px;
+    color: white;
+}
+
+.close-button {
+    position: relative;
+    top: 5 vh;
+    left: 5vw;
+    z-index: 2;
+    color: white;
+    font-size: 60px;
+    padding: 20px;
+    margin: 30px;
+}
+
+.upload-picture-button {
+    background-color: var(--twitter-blue);
+    border: none;
+    color: white;
+    font-weight: 900;
+    border-radius: 30px;
+    width: 120px;
+    height: 40px;
+    margin-top: 20px;
+}
+
+.upload-picture-button:hover {
+    background-color: var(--twitter-blue-hover);
+}
+
+.add-picture form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.add-picture {
+    display: flex;
+    border-top: 1px solid var(--background-white);
+}
+
+.add-picture label {
+    margin-right: 20px;
+}
+
+.description {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    justify-content: space-between;
+
+}

@@ -5,9 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import projekti.appuser.AppUserService;
+import projekti.post.PostService;
 
 @Controller
 public class DefaultController {
+
+    @Autowired
+    private PostService postService;
 
     @Autowired
     private AppUserService appUserService;
@@ -18,7 +22,9 @@ public class DefaultController {
     }
 
     @GetMapping("/frontpage")
-    public String landing() {
+    public String frontpage(Model model) {
+        model.addAttribute("posts", postService.getNewestPosts());
         return "frontpage";
     }
+
 }

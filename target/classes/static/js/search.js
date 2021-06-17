@@ -1,4 +1,4 @@
-const searchBar = document.querySelector("#search-bar");
+// const searchBar = document.querySelector("#search-bar");
 
 function findUserKeyUp() {
     if (event.key === 'Enter') {

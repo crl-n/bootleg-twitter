@@ -1,0 +1,49 @@
+<!-- POST STARTS -->
+
+<div class="post-comment-container">
+
+<div class="post">
+  <div class="post-avatar">
+    <img th:src="@{/images/anonymous-user.svg}" src="" alt="Profile Picture">
+  </div>
+  <div class="post-body">
+    <div class="post-header">
+      <div class="post-header-text">
+        <h3>
+          <span th:text="${post.author.username}" id="post-header-username">Firstname Lastname</span>
+          <span th:text="${#temporals.format(post.postedAt, 'dd-MM-yyyy HH:mm')}" class="post-header-special" id="post-header-date">16.06.2021</span>
+        </h3>
+      </div>
+      <div class="post-header-description">
+        <p th:text="${post.content}" class="post-content">Montmartre is an incredible part of Paris.</p>
+      </div>
+    </div>
+    <img th:src="@{/images/copenhagen.jpeg}" src="https://en.parisinfo.com/var/otcp/sites/images/node_43/node_51/node_232/la-maison-rose-%7C-630x405-%7C-%C2%A9-studio-ttg/19371469-1-fre-FR/La-Maison-Rose-%7C-630x405-%7C-%C2%A9-Studio-TTG.jpg" alt="">
+    <div class="post-footer">
+      <span th:attr="onclick=|discussionClick('comments${post.id}')|"><i class="bi bi-chat"></i></span>
+      <span onclick="likeClick();"><i class="bi bi-heart"></i></span>
+      <span onclick="retweetClick();"><i class="bi bi-arrow-repeat"></i></span>
+    </div>
+  </div>
+</div>
+  <!-- COMMENTS START -->
+  <div th:id="'comments'+${post.id}" class="comments">
+
+    <!-- COMMENTBOX STARTS -->
+    <div class="commentbox">
+      <div class="commentbox-body">
+        <textarea rows="4" cols="50" class="comment-content"></textarea>
+        <div class="send-comment-container"><div class="send-comment" th:attr="onclick=|sendComment('${post.id}', this)|">Send Comment</div></div>
+      </div>
+    </div>
+    <!-- COMMENTBOX ENDS -->
+
+    <div th:each="comment: ${post.comments}">
+      <div th:replace="fragments/comment"></div>
+    </div>
+
+  </div>
+  <!-- COMMENTS END -->
+</div>
+
+<!-- POST ENDS -->

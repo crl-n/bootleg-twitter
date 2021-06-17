@@ -1,0 +1,38 @@
+<!-- ALBUM STARTS -->
+<div class="album">
+  <h3>Album</h3>
+  <div class="pictureRow" id="row1">
+    <img th:src="@{/images/copenhagen.jpeg}" onclick="openFullScreenImage(this.src);">
+    <img th:src="@{/images/pyramids.jpeg}" onclick="openFullScreenImage(this.src);">
+  </div>
+  <div class="pictureRow" id="row2">
+    <img th:src="@{/images/seychelles.jpeg}" onclick="openFullScreenImage(this.src);">
+    <img th:src="@{/images/porto.jpeg}" onclick="openFullScreenImage(this.src);">
+  </div>
+
+  <!-- UPLOAD FORM STARTS -->
+  <div class="add-picture">
+    <form>
+      <input type="file">
+      <div class="description">
+        <label>Description: </label><input type="text" placeholder="Description">
+      </div>
+
+      <button class="upload-picture-button">Add new picture</button>
+    </form>
+  </div>
+  <!-- UPLOAD FORM ENDS -->
+
+</div>
+
+<!-- OVERLAY STARTS -->
+<div id="overlay-screen" class="overlay">
+  <a href="javascript:void(0)" class="close-button" onclick="closeFullScreenImage()">&times;</a>
+  <div class="overlay-content">
+    <img src="" id="overlay-image">
+    <p>This is a description of the above image.</p>
+  </div>
+</div>
+<!-- OVERLAY ENDS -->
+
+<!-- ALBUM ENDS -->

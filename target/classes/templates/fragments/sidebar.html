@@ -1,6 +1,25 @@
-<div class="sidebar" th:fragment="sidebar">
-    <a href="/"><i class="bi-house" style="font-size: 3rem;"></i></a><br>
-    <a href="#"><i class="bi-person-circle" style="font-size: 3rem;"></i></a><br>
-    <a href="#"><i class="bi-gear-wide" style="font-size: 3rem;"></i></a><br>
-    <a class="logout" href="#">Log Out</a>
+<!-- SIDEBAR STARTS -->
+
+<div class="sidebar">
+    <div class="logo-item">
+        <i class="bi bi-twitter logo"></i>
+    </div>
+    <div class="sidebar-item" onclick="window.location.href = '/frontpage';">
+        <i class="bi-house icon"></i>
+        <h2>Home</h2>
+    </div>
+    <div class="sidebar-item" onclick="window.location.href = '/profile';">
+        <i class="bi-person-circle icon"></i>
+        <h2>My Profile</h2>
+    </div>
+    <div class="sidebar-item" onclick="alert('Work in progress');">
+        <i class="bi-gear-wide icon"></i>
+        <h2>Settings</h2>
+    </div>
+    <div class="sidebar-item" onclick="window.location.href = '/logout';">
+        <i class="bi bi-box-arrow-right icon"></i>
+        <h2>Log Out</h2>
+    </div>
 </div>
+
+<!-- SIDEBAR ENDS -->

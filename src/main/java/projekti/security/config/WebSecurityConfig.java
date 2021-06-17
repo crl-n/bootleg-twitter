@@ -23,10 +23,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
+        http.headers().frameOptions().disable();
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/register", "/css/**", "js/**", "/landing", "login").permitAll()
+                .antMatchers("/", "/register", "/css/**", "js/**", "/landing", "login", "/h2-console", "/h2-console/**").permitAll()
                 .anyRequest().authenticated().and()
                 .formLogin()
                 .defaultSuccessUrl("/frontpage");

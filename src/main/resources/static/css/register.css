@@ -71,7 +71,7 @@ input {
     border: solid;
     border-color: transparent;
     border-radius: 30px;
-    color: white;
+    color: black;
 }
 
 input:focus {

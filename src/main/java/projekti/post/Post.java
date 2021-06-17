@@ -4,12 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.domain.AbstractPersistable;
+import projekti.appuser.AppUser;
 import projekti.comment.Comment;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -18,8 +15,10 @@ import java.util.List;
 @Table(name = "Posts")
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class Post extends AbstractPersistable<Long> {
+
+    @ManyToOne
+    private AppUser author;
 
     @Column(name = "postedAt")
     private LocalDateTime postedAt;
@@ -27,5 +26,7 @@ public class Post extends AbstractPersistable<Long> {
     @OneToMany
     private List<Comment> comments;
 
+    @Column(name = "content")
+    private String content;
 
 }
