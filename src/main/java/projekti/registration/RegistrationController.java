@@ -21,17 +21,11 @@ public class RegistrationController {
                            @RequestParam String firstname,
                            @RequestParam String lastname,
                            @RequestParam String pagename,
-                           @RequestParam String password,
-                           @RequestParam String rpassword
+                           @RequestParam String password
                            ) {
-        RegistrationRequest request = new RegistrationRequest(username, firstname, lastname, pagename, password, rpassword);
+        RegistrationRequest request = new RegistrationRequest(username, firstname, lastname, pagename, password);
         registrationService.register(request);
         return "index";
     }
 
-//    @PostMapping("/register")
-//    public String submitRegistration(@ModelAttribute AppUser appUser) {
-//        //appUserService.addUser(appUser);
-//        return "redirect:/register";
-//    }
 }

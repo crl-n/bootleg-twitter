@@ -1,24 +1,26 @@
 <!-- ALBUM STARTS -->
-<div class="album">
+<div th:if="${profileUserId}" class="album">
   <h3>Album</h3>
-  <div class="pictureRow" id="row1">
-    <img th:src="@{/images/copenhagen.jpeg}" onclick="openFullScreenImage(this.src);">
-    <img th:src="@{/images/pyramids.jpeg}" onclick="openFullScreenImage(this.src);">
-  </div>
-  <div class="pictureRow" id="row2">
-    <img th:src="@{/images/seychelles.jpeg}" onclick="openFullScreenImage(this.src);">
-    <img th:src="@{/images/porto.jpeg}" onclick="openFullScreenImage(this.src);">
+  <div class="picture-container">
+      <div th:each="picture: ${pictures}" class="picture">
+        <img th:src="'/img?id='+${picture.id}" th:attr="onclick=|openFullScreenImage(this.src, '${picture.description}');|">
+        <div class="like-picture" th:attr="onclick=|likePictureButtonClick(${currentUserId}, ${picture.id});|">
+          <i th:id="'icon'+${picture.id}" class="bi bi-suit-heart-fill" th:attr="onload=|redLikeButton(${currentUserId}, ${picture.id}, this);|"></i>
+          <span th:text="${#lists.size(picture.likes)}" class="picture-likes">0</span>
+        </div>
+        <div th:if="${currentUserId}==${profileUserId}" class="set-profile-picture" onclick="setAsProfilePicture(this);">Set as profile picture</div>
+      </div>
   </div>
 
   <!-- UPLOAD FORM STARTS -->
-  <div class="add-picture">
-    <form>
-      <input type="file">
+  <div th:if="${currentUserId}==${profileUserId}" class="add-picture">
+    <form class="upload-form" enctype="multipart/form-data" action="/upload" method="post" id="upload-form">
+      <input type="file" name="picture" class="picture-input" id="picture-input" accept="image/*">
       <div class="description">
-        <label>Description: </label><input type="text" placeholder="Description">
+        <label>Description: </label><input name="description" id="picture-description-input" type="text" placeholder="Description" maxlength="100">
       </div>
-
-      <button class="upload-picture-button">Add new picture</button>
+      <input type="hidden" name="currentUserId" id="upload-user-id">
+      <button class="upload-picture-button" th:attr="onclick=|uploadPicture(${currentUserId});|">Add new picture</button>
     </form>
   </div>
   <!-- UPLOAD FORM ENDS -->
@@ -30,7 +32,7 @@
   <a href="javascript:void(0)" class="close-button" onclick="closeFullScreenImage()">&times;</a>
   <div class="overlay-content">
     <img src="" id="overlay-image">
-    <p>This is a description of the above image.</p>
+    <p id="overlay-description">This is a description of the above image.</p>
   </div>
 </div>
 <!-- OVERLAY ENDS -->

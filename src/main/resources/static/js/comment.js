@@ -1,4 +1,5 @@
 function sendComment(id, element) {
+    // Retrieve the textarea element present in the comment-box div of post.html
     var content = element.parentElement.parentElement.children[0].value;
 
     var data = new FormData();
@@ -7,16 +8,13 @@ function sendComment(id, element) {
 
     var xhr = new XMLHttpRequest();
     xhr.open("POST", "/comment");
-
     xhr.onreadystatechange = function () {
        if (xhr.readyState === 4) {
           console.log(xhr.status);
           console.log(xhr.responseText);
        }
     };
-
     xhr.send(data);
-
 
     window.location.reload();
 }

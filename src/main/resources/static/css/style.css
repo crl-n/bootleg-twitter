@@ -180,6 +180,7 @@ body {
 
 .post-footer i:hover {
     color: var(--twitter-blue);
+    cursor: pointer;
 }
 
 .post-header-special {
@@ -205,6 +206,11 @@ body {
 
 .post-avatar {
     padding: 20px;
+}
+
+.post-header-username:hover {
+    cursor: pointer;
+    color: var(--twitter-blue-hover);
 }
 
 /* COMMENTS */
@@ -250,10 +256,16 @@ body {
 
 .send-comment:hover {
     background-color: var(--twitter-blue-hover);
+    cursor: pointer;
 }
 
 .comment-author {
     font-weight: 600 !important;
+}
+
+.comment-author:hover {
+    cursor: pointer;
+    color: var(--twitter-blue-hover);
 }
 
 .comment-avatar img {
@@ -351,16 +363,53 @@ body {
     padding: 20px;
 }
 
-.pictureRow {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    margin-bottom: 20px;
+.picture-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto auto auto;
+    grid-gap: 5px;
 }
 
-.pictureRow img {
-    width: 40%;
+.picture-container img {
     border-radius: 15px;
+    cursor: pointer;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.picture div {
+    margin-top: 8px;
+}
+
+.set-profile-picture {
+    font-size: 9px;
+    font-weight: 300;
+}
+
+.set-profile-picture:hover {
+    color: var(--twitter-blue-hover);
+    cursor: pointer;
+}
+
+.like-picture {
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.like-picture i {
+    color: var(--twitter-blue)
+}
+
+.like-picture:hover {
+    color: var(--twitter-blue-hover);
     cursor: pointer;
 }
 
@@ -416,6 +465,7 @@ body {
 
 .upload-picture-button:hover {
     background-color: var(--twitter-blue-hover);
+    cursor: pointer;
 }
 
 .add-picture form {
@@ -441,4 +491,66 @@ body {
     margin-top: 10px;
     justify-content: space-between;
 
+}
+
+/* PROFILE HEADER */
+
+.profile-header-box {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    padding: 40px 20px 10px 20px;
+    border-bottom: 8px solid var(--background-white);
+}
+
+.big-profile-picture img {
+    height: 200px;
+    padding-bottom: 15px;
+}
+
+.userDetails {
+    /*
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    */
+}
+
+.userDetails-fullName {
+    font-size: 30px;
+    font-weight: 750;
+    padding-bottom: 5px;
+}
+
+.userDetails-username {
+    font-size: 26px;
+    font-weight: 550;
+    color: gray;
+    padding-bottom: 10px;
+}
+
+.userDetails-joinedAt {
+    color: gray;
+    padding-bottom: 5px;
+}
+
+.follow-user {
+    background-color: white;
+    border: 2px solid var(--twitter-blue);
+    color: var(--twitter-blue);
+    font-weight: 900;
+    border-radius: 30px;
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.follow-user:hover {
+    background-color: var(--twitter-blue-hover);
+    color: white;
+    border: none;
 }

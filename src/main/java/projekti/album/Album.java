@@ -7,10 +7,7 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 import projekti.appuser.AppUser;
 import projekti.picture.Picture;
 
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -23,6 +20,6 @@ public class Album extends AbstractPersistable<Long> {
     @OneToOne
     private AppUser user;
 
-    @OneToMany
+    @OneToMany(mappedBy = "album", fetch = FetchType.EAGER)
     private List<Picture> pictures;
 }

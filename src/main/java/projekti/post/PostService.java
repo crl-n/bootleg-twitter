@@ -40,6 +40,15 @@ public class PostService {
         return postRepository.findTop25PostsByAuthorOrderByPostedAtDesc(appUserRepository.findByUsername(mvcController.getCurrentUsername()).get());
     }
 
+    public Object getUsersNewestPosts(String username) throws UsernameNotFoundException {
+        boolean userExists = appUserRepository.findByUsername(username).isPresent();
+
+        if (!userExists) {
+            throw new UsernameNotFoundException("Username not found");
+        }
+        return postRepository.findTop25PostsByAuthorOrderByPostedAtDesc(appUserRepository.findByUsername(username).get());
+    }
+
     public void addPost(String content, String username, LocalDateTime postedAt) throws UsernameNotFoundException{
         if (!appUserRepository.findByUsername(username).isPresent()) {
             throw new UsernameNotFoundException("Username not found.");

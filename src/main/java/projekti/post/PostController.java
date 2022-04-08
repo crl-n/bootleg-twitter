@@ -23,6 +23,6 @@ public class PostController {
         String author = mvcController.getCurrentUsername();
         LocalDateTime postedAt = LocalDateTime.now();
         postService.addPost(content, author, postedAt);
-        return "redirect:/frontpage";
+        return "redirect:frontpage";
     }
 }

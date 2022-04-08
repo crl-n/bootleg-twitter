@@ -10,7 +10,7 @@
     <div class="post-header">
       <div class="post-header-text">
         <h3>
-          <span th:text="${post.author.username}" id="post-header-username">Firstname Lastname</span>
+          <span th:text="${post.author.username}" class="post-header-username" id="post-header-username" onclick="goToProfile(this);">Firstname Lastname</span>
           <span th:text="${#temporals.format(post.postedAt, 'dd-MM-yyyy HH:mm')}" class="post-header-special" id="post-header-date">16.06.2021</span>
         </h3>
       </div>

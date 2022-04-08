@@ -1,4 +1,4 @@
-2021-06-17 10:27:45 database: flush
+2021-06-23 11:36:28 database: flush
 org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/carlnysten/IdeaProjects/TMCProjects/mooc-wepa-21-projekti/wepa_Projekti/database.mv.db [1.4.200/7]" [50000-200]
 	at org.h2.message.DbException.get(DbException.java:194)
 	at org.h2.message.DbException.convert(DbException.java:347)
@@ -106,7 +106,7 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/carln
 	at org.h2.mvstore.FileStore.open(FileStore.java:172)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
 	... 91 more
-2021-06-17 10:27:47 database: flush
+2021-06-23 11:36:29 database: flush
 org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/carlnysten/IdeaProjects/TMCProjects/mooc-wepa-21-projekti/wepa_Projekti/database.mv.db [1.4.200/7]" [50000-200]
 	at org.h2.message.DbException.get(DbException.java:194)
 	at org.h2.message.DbException.convert(DbException.java:347)
@@ -169,7 +169,7 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/carln
 	at org.h2.mvstore.FileStore.open(FileStore.java:172)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
 	... 46 more
-2021-06-17 10:27:48 database: flush
+2021-06-23 11:36:31 database: flush
 org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/carlnysten/IdeaProjects/TMCProjects/mooc-wepa-21-projekti/wepa_Projekti/database.mv.db [1.4.200/7]" [50000-200]
 	at org.h2.message.DbException.get(DbException.java:194)
 	at org.h2.message.DbException.convert(DbException.java:347)

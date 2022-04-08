@@ -12,9 +12,9 @@ public class CommentController {
     private CommentService commentService;
 
     @PostMapping("/comment")
-    public String comment(@RequestParam String content, @RequestParam Long id) {
+    public void comment(@RequestParam String content, @RequestParam Long id) {
         commentService.addComment(content, id);
-        return "redirect:/frontpage";
+        //return "redirect:frontpage";
     }
 
 

@@ -1,0 +1,19 @@
+<!-- HEADER STARTS -->
+<div class="profile-header-box">
+    <div class="big-profile-picture">
+      <img src="https://www.avainmedia.org/wp-content/plugins/give/assets/dist/images/anonymous-user.svg" alt="Profile Picture">
+    </div>
+    <div class="userDetails">
+          <h3 th:text="${profileFullName}" class="userDetails-fullName"></h3>
+          <div th:text="'@'+${profileUsername}" class="userDetails-username"></div>
+          <div th:text="'Joined '+${#temporals.format(profileUserJoined, 'dd-MM-yyyy')}" class="userDetails-joinedAt"></div>
+          <div class="userDetails-followers">
+              <span th:text="${profileUserFollowers}" class="follower-amount"></span><span style="color: gray;"> followers</span>
+          </div>
+          <div id="follow-user" class="follow-user" th:attr="onclick=|followUser('${currentUserId}', '${profileUserId}');|">
+              <span>Follow</span>
+          </div>
+
+    </div>
+</div>
+<!-- HEADER ENDS -->

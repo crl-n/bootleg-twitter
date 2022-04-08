@@ -4,11 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.jpa.domain.AbstractPersistable;
+import projekti.album.Album;
+import projekti.like.PictureLike;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Lob;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "Pictures")
@@ -22,4 +22,10 @@ public class Picture extends AbstractPersistable<Long> {
 
     @Lob
     private byte[] content;
+
+    @ManyToOne
+    private Album album;
+
+    @OneToMany(mappedBy = "picture", fetch = FetchType.EAGER)
+    private List<PictureLike> likes;
 }

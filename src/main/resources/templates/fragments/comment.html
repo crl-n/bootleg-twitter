@@ -5,7 +5,7 @@
   </div>
   <div class="comment-body">
     <div class="comment-header">
-      <span th:text="${comment.author.username}" class="comment-author">Anonymous</span>
+      <span th:text="${comment.author.username}" class="comment-author" onclick="goToProfile(this);">Anonymous</span>
       <span th:text="${#temporals.format(comment.postedAt, 'dd-MM-yyyy HH:mm')}" class="comment-postedAt">16.06.2021</span>
     </div>
     <div class="comment-content">
